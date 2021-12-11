@@ -1,4 +1,4 @@
-name: assignees-sample
+name: assignees
 
 on:
   pull_request:
