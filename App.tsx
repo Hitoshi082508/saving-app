@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ScrollView } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
+import { db } from './src/lib/firebase';
 
 export default function App() {
+  const [data, setData] = useState<any>([]);
 
-  const day = [{date: 1}, {date: 2}, {date: 3}]
+  useEffect(() => {
+    db.collection('users').onSnapshot((snapshot) => {
+      const users = snapshot.docs.map((doc) => {
+        return doc.data();
+      });
+      setData(users);
+    });
+  }, []);
+
+  console.log(data);
 
   return (
     <ScrollView>
