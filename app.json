@@ -27,6 +27,16 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyCGfh_BV3gls7O38OxrVY0wD2p44BgBhwM",
+        "authDomain": "saving-app-b7901.firebaseapp.com",
+        "projectId": "saving-app-b7901",
+        "storageBucket": "saving-app-b7901.appspot.com",
+        "messagingSenderId": "167674673649",
+        "appId": "1:167674673649:web:bacc957725143aeae86c50"
+      }
     }
   }
 }
