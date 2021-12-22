@@ -9,5 +9,5 @@ export default function App() {
       <Header text="ホーム"/>
       <Calender />
     </ScrollView>
-  )
+  );
 }
