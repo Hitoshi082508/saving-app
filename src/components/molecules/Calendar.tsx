@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 import { CalenderDateType } from '../../types';
 type Props = {
-  className?: string
-}
+  className?: string;
+};
 export const Calender: React.FC<Props> = ({ className }) => {
   const currentDate = new Date();
 
@@ -22,13 +22,19 @@ export const Calender: React.FC<Props> = ({ className }) => {
       monthFormat={'yyyy年 MM月'}
       enableSwipeMonths={true}
       style={{ marginTop: 100 }}
-      dayComponent={({date}: {date: CalenderDateType}) => {
+      dayComponent={({ date }: { date: CalenderDateType }) => {
         return (
           <TouchableOpacity style={styles.container}>
-            <Text style={{textAlign: 'center', color: today === date.dateString ? '#67AEDF' : date.month === month ? '#000' : '#CCC'}}>
+            <Text
+              style={{
+                textAlign: 'center',
+                color:
+                  today === date.dateString ? '#67AEDF' : date.month === month ? '#000' : '#CCC',
+              }}
+            >
               {date.day}
             </Text>
-            <Text style={[styles.money, {color: moneyStyle}]}>{money}</Text>
+            <Text style={[styles.money, { color: moneyStyle }]}>{money}</Text>
           </TouchableOpacity>
         );
       }}
@@ -38,20 +44,46 @@ export const Calender: React.FC<Props> = ({ className }) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: 35
+    height: 35,
   },
   day: {
     textAlign: 'center',
   },
   money: {
     fontSize: 11,
-    marginTop: 4
-  }
+    marginTop: 4,
+  },
 });
 
 LocaleConfig.locales.jp = {
-  monthNames: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-  monthNamesShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+  monthNames: [
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
+  ],
+  monthNamesShort: [
+    '1月',
+    '2月',
+    '3月',
+    '4月',
+    '5月',
+    '6月',
+    '7月',
+    '8月',
+    '9月',
+    '10月',
+    '11月',
+    '12月',
+  ],
   dayNames: ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日'],
   dayNamesShort: ['日', '月', '火', '水', '木', '金', '土'],
 };
