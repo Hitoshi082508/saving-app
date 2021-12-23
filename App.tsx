@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView } from 'react-native';
 import { Calender } from './src/components/molecules/Calendar';
 import { Header } from './src/components/atoms/Header';
-import { LimitInput } from './src/components/atoms/LimitInput';
+import { LimitContainer } from './src/components/molecules/LimitContainer';
 
 export default function App() {
   const [text, setText] = useState('');
@@ -10,7 +10,7 @@ export default function App() {
   return (
     <ScrollView>
       <Header text="ホーム"/>
-      <LimitInput onChangeText={(text) => setText(text)} />
+      <LimitContainer onChangeText={(text) => setText(text)}/>
       <Calender />
     </ScrollView>
   );
