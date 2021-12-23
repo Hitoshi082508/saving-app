@@ -1,4 +1,4 @@
-export type CalenderDateType = {
+export type CalendarDateType = {
   dateString: string;
   day: number;
   month: number;

@@ -1,6 +1,7 @@
-import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
+import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Text } from 'react-native';
+// components
 import { LimitInput } from '../atoms/LimitInput';
 type Props = {
   onChangeText: (text: string) => void

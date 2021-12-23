@@ -2,10 +2,9 @@ import React from 'react';
 import { Text, StyleSheet } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 type Props = {
-  className?: string;
   text: string;
 };
-export const Header: React.FC<Props> = ({ className, text }) => {
+export const Header: React.FC<Props> = ({ text }) => {
   return (
     <LinearGradient
       colors={['#74D9FF', '#26ABFF']}

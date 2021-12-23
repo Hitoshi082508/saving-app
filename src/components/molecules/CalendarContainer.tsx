@@ -1,11 +1,12 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
-import { CalenderDateType } from '../../types';
+// type
+import { CalendarDateType } from '../../types';
 type Props = {
   className?: string;
 };
-export const Calender: React.FC<Props> = ({ className }) => {
+export const CalendarContainer: React.FC<Props> = ({ className }) => {
   const currentDate = new Date();
 
   const year = currentDate.getFullYear();
@@ -21,8 +22,8 @@ export const Calender: React.FC<Props> = ({ className }) => {
     <Calendar
       monthFormat={'yyyy年 MM月'}
       enableSwipeMonths={true}
-      style={{ marginTop: 100 }}
-      dayComponent={({ date }: { date: CalenderDateType }) => {
+      style={styles.calendarContainer}
+      dayComponent={({ date }: { date: CalendarDateType }) => {
         return (
           <TouchableOpacity style={styles.container}>
             <Text
@@ -43,6 +44,9 @@ export const Calender: React.FC<Props> = ({ className }) => {
 };
 
 const styles = StyleSheet.create({
+  calendarContainer: {
+    marginTop: 100
+  },
   container: {
     height: 35,
   },
