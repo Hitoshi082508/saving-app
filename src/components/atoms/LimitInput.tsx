@@ -9,6 +9,7 @@ export const LimitInput: React.FC<Props> = ({ onChangeText }) => {
       style={styles.container}
       onChangeText={(text) => onChangeText(text)}
       placeholder="50000円"
+      keyboardType='number-pad'
     />
   );
 };
@@ -16,6 +17,7 @@ const styles = StyleSheet.create({
   container: {
     width: 250,
     height: 40,
+    backgroundColor: '#fff',
     borderRadius: 5,
     paddingLeft: 10,
     shadowColor: '#00000029',
@@ -23,6 +25,7 @@ const styles = StyleSheet.create({
     shadowOffset: {
       width: 3,
       height: 0
-    }
+    },
+    marginTop: 15
   },
 });
