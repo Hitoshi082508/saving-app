@@ -5,7 +5,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 // component
 import { CalendarContainer } from 'src/components/molecules/CalendarContainer';
 import { Header } from 'src/components/atoms/Header';
-import { LimitContainer } from 'src/components/molecules/LimitContainer';
+import { MonthLimitContainer } from 'src/components/molecules/MonthLimitContainer';
 // type
 import { RootStackParamList } from 'src/types/navigation';
 
@@ -19,7 +19,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
   return (
     <ScrollView>
       <Header text="ホーム" />
-      <LimitContainer onChangeText={(text) => setText(text)} />
+      <MonthLimitContainer onChangeText={(text) => setText(text)} />
       <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
         <CalendarContainer />
       </TouchableOpacity>
