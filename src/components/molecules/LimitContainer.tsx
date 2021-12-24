@@ -2,10 +2,10 @@ import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import { StyleSheet, Text } from 'react-native';
 // components
-import { LimitInput } from '../atoms/LimitInput';
+import { LimitInput } from 'src/components/atoms/LimitInput';
 type Props = {
-  onChangeText: (text: string) => void
-}
+  onChangeText: (text: string) => void;
+};
 export const LimitContainer: React.FC<Props> = ({ onChangeText }) => {
   return (
     <LinearGradient
@@ -16,7 +16,7 @@ export const LimitContainer: React.FC<Props> = ({ onChangeText }) => {
     >
       <Text style={styles.text}>先月の目標は達成できましたか？</Text>
       <Text style={styles.text}>今月の目標を教えてください！！</Text>
-      <LimitInput onChangeText={onChangeText}/>
+      <LimitInput onChangeText={onChangeText} />
     </LinearGradient>
   );
 };
@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 17,
     fontWeight: 'bold',
-    color: '#fff'
-  }
+    color: '#fff',
+  },
 });
