@@ -6,7 +6,7 @@ import { LimitInput } from 'src/components/atoms/LimitInput';
 type Props = {
   onChangeText: (text: string) => void;
 };
-export const LimitContainer: React.FC<Props> = ({ onChangeText }) => {
+export const MonthLimitContainer: React.FC<Props> = ({ onChangeText }) => {
   return (
     <LinearGradient
       colors={['#4594D7', '#4594D7']}
