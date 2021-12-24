@@ -8,6 +8,7 @@ import { Header } from 'src/components/atoms/Header';
 import { RootStackParamList } from 'src/types/navigation';
 import { TodayLimitBlue } from 'src/components/atoms/TodayLimitBlue';
 import { TodayLimitRed } from 'src/components/atoms/TodayLimitRed';
+import { ItemList } from 'src/components/molecules/ItemList';
 
 type Props = {
   navigation: StackNavigationProp<RootStackParamList, 'Detail'>;
@@ -21,7 +22,7 @@ export const DetailScreen: React.FC<Props> = ({ navigation }) => {
     <ScrollView>
       <Header text="詳細" back={() => navigation.navigate('Home')} icon />
       <TodayLimitBlue text="aa" />
-      <TodayLimitRed text="aa" />
+      <ItemList item="ケーキ" money={1000} />
     </ScrollView>
   );
 };

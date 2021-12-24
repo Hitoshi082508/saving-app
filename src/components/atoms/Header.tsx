@@ -6,7 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 type Props = {
   text: string;
   icon?: boolean;
-  back: () => void;
+  back?: () => void;
 };
 export const Header: React.FC<Props> = ({ text, icon, back }) => {
   const aa = false;
