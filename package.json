@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix './src/**/*.{js,ts,tsx}'",
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
+    "check-types": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "@types/react-native": "~0.64.12",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",

@@ -2,7 +2,7 @@ import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 // type
-import { CalendarDateType } from '../../types';
+import { CalendarDateType } from 'src/types/index';
 type Props = {
   className?: string;
 };
@@ -45,7 +45,7 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
 
 const styles = StyleSheet.create({
   calendarContainer: {
-    marginTop: 100
+    marginTop: 100,
   },
   container: {
     height: 35,
