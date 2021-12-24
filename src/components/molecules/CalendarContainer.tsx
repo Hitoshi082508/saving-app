@@ -10,13 +10,13 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
   const currentDate = new Date();
 
   const year = currentDate.getFullYear();
-  const month = currentDate.getMonth() + 1
+  const month = currentDate.getMonth() + 1;
   const date = currentDate.getDate();
 
   const today = `${year}-${month}-${date}`;
 
   const money = 1000;
-  const moneyStyle = money > 0 ? '#3CB371' : '#dc143c'
+  const moneyStyle = money > 0 ? '#3CB371' : '#dc143c';
 
   return (
     <Calendar
