@@ -1,15 +1,15 @@
 import React from 'react';
 import { StyleSheet, TextInput } from 'react-native';
 type Props = {
-  onChangeText: (text: string) => void
-}
+  onChangeText: (text: string) => void;
+};
 export const LimitInput: React.FC<Props> = ({ onChangeText }) => {
   return (
     <TextInput
       style={styles.container}
       onChangeText={(text) => onChangeText(text)}
       placeholder="50000円"
-      keyboardType='number-pad'
+      keyboardType="number-pad"
     />
   );
 };
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 6,
     shadowOffset: {
       width: 3,
-      height: 0
+      height: 0,
     },
-    marginTop: 15
+    marginTop: 15,
   },
 });
