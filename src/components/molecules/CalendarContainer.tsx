@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 // type
 import { CalendarDateType } from 'src/types/index';
+import { CalendarChild } from '../atoms/Calendar';
 type Props = {
   className?: string;
 };
@@ -24,20 +25,7 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
       enableSwipeMonths={true}
       style={styles.calendarContainer}
       dayComponent={({ date }: { date: CalendarDateType }) => {
-        return (
-          <TouchableOpacity style={styles.container}>
-            <Text
-              style={{
-                textAlign: 'center',
-                color:
-                  today === date.dateString ? '#67AEDF' : date.month === month ? '#000' : '#CCC',
-              }}
-            >
-              {date.day}
-            </Text>
-            <Text style={[styles.money, { color: moneyStyle }]}>{money}</Text>
-          </TouchableOpacity>
-        );
+        return <CalendarChild dateData={date} limitMoney={3000} spendMoney={2000} />;
       }}
     />
   );
@@ -45,7 +33,7 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
 
 const styles = StyleSheet.create({
   calendarContainer: {
-    marginTop: 100,
+    marginTop: 0,
   },
   container: {
     height: 35,
