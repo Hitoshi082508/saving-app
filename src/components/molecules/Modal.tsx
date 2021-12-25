@@ -22,18 +22,19 @@ export const Modal: React.FC = () => {
   });
 
   const changeModalState = () => {
-    setModalVisible(false);
+    setModalVisible(!modalVisible);
   };
 
   const openModal = () => {
-    setModalVisible(true);
-    height.value = withTiming(300, { duration: 2000 });
-    opacity.value = withTiming(1, { duration: 5000 });
+    setTimeout(changeModalState, 310);
+    height.value = withTiming(300, { duration: 1000 });
+    opacity.value = withTiming(1, { duration: 700 });
   };
 
   const closeModal = async () => {
-    height.value = withTiming(0, { duration: 2000 });
-    setTimeout(changeModalState, 1800);
+    height.value = withTiming(0, { duration: 1000 });
+    opacity.value = withTiming(0, { duration: 500 });
+    setTimeout(changeModalState, 1000);
   };
 
   return (

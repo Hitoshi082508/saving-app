@@ -9,6 +9,8 @@ import { RootStackParamList } from 'src/types/navigation';
 import { TodayLimitBlue } from 'src/components/atoms/TodayLimitBlue';
 import { ItemList } from 'src/components/molecules/ItemList';
 import { Modal } from 'src/components/molecules/Modal';
+import { TotalPrice } from 'src/components/atoms/TotalPrice';
+import { TodayLimitBlueSub } from 'src/components/atoms/TodayLimitBlueSub';
 
 type Props = {
   navigation: StackNavigationProp<RootStackParamList, 'Detail'>;
@@ -23,6 +25,8 @@ export const DetailScreen: React.FC<Props> = ({ navigation }) => {
         <TodayLimitBlue text="aa" />
         <ItemList item="ケーキ" money={1000} />
         <Modal />
+        <TotalPrice totalPrice="1000" />
+        <TodayLimitBlueSub />
       </View>
     </ScrollView>
   );

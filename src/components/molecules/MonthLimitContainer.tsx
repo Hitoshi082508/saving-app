@@ -15,7 +15,7 @@ export const MonthLimitContainer: React.FC<Props> = ({ onChangeText }) => {
       style={styles.container}
     >
       <Text style={styles.text}>先月の目標は達成できましたか？</Text>
-      <Text style={styles.text}>今月の目標を教えてください！！</Text>
+      <Text style={styles.text}>今月の目標を教えてください😊</Text>
       <LimitInput onChangeText={onChangeText} />
     </LinearGradient>
   );
