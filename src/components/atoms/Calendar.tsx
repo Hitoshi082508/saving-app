@@ -16,9 +16,21 @@ export const CalendarChild: React.FC<Props> = ({
   limitMoney,
   navigation,
 }) => {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth() + 1;
+  const date = currentDate.getDate();
+
+  const today = `${year}-${month}-${date}`;
   return (
     <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Detail')}>
-      <Text style={styles.day}>{dateData.day}</Text>
+      {dateData.dateString === today ? (
+        <View style={styles.todayContainer}>
+          <Text style={styles.today}>{dateData.day}</Text>
+        </View>
+      ) : (
+        <Text style={styles.day}>{dateData.day}</Text>
+      )}
       <View style={styles.limitContainer}>
         <Text style={styles.limitMoney}>{`${limitMoney}円`}</Text>
       </View>
@@ -44,6 +56,20 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 5,
     marginBottom: 10,
+  },
+  todayContainer: {
+    width: 25,
+    height: 25,
+    borderRadius: 22,
+    backgroundColor: '#4594D7',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  today: {
+    color: '#fff',
+    fontSize: 15,
   },
   limitContainer: {
     width: 50,
