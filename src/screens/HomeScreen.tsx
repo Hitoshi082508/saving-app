@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, TouchableOpacity } from 'react-native';
+import { ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 // component
@@ -17,7 +17,7 @@ type Props = {
 export const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const [text, setText] = useState('');
   return (
-    <ScrollView>
+    <ScrollView style={styles.container}>
       <Header text="ホーム" />
       <MonthLimitContainer onChangeText={(text) => setText(text)} />
       <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
@@ -26,3 +26,10 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     </ScrollView>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    minHeight: '100%',
+  },
+});
