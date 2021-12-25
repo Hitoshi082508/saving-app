@@ -10,7 +10,7 @@ import { MonthLimitContainer } from 'src/components/molecules/MonthLimitContaine
 import { RootStackParamList } from 'src/types/navigation';
 
 type Props = {
-  navigation: StackNavigationProp<RootStackParamList, 'Home'>;
+  navigation: StackNavigationProp<RootStackParamList, 'Detail'>;
   route: RouteProp<RootStackParamList, 'Home'>;
 };
 
@@ -20,9 +20,7 @@ export const HomeScreen: React.FC<Props> = ({ navigation }) => {
     <ScrollView style={styles.container}>
       <Header text="ホーム" />
       <MonthLimitContainer onChangeText={(text) => setText(text)} />
-      <TouchableOpacity onPress={() => navigation.navigate('Detail')}>
-        <CalendarContainer />
-      </TouchableOpacity>
+      <CalendarContainer navigation={navigation} />
     </ScrollView>
   );
 };

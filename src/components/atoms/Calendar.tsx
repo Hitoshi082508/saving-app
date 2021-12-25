@@ -1,15 +1,23 @@
+import { StackNavigationProp } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { CalendarDateType } from 'src/types';
+import { RootStackParamList } from 'src/types/navigation';
 type Props = {
   dateData: CalendarDateType;
   spendMoney: number;
   limitMoney: number;
+  navigation: StackNavigationProp<RootStackParamList, 'Detail'>;
 };
-export const CalendarChild: React.FC<Props> = ({ dateData, spendMoney, limitMoney }) => {
+export const CalendarChild: React.FC<Props> = ({
+  dateData,
+  spendMoney,
+  limitMoney,
+  navigation,
+}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate('Detail')}>
       <Text style={styles.day}>{dateData.day}</Text>
       <View style={styles.limitContainer}>
         <Text style={styles.limitMoney}>{`${limitMoney}円`}</Text>
@@ -22,15 +30,14 @@ export const CalendarChild: React.FC<Props> = ({ dateData, spendMoney, limitMone
 };
 const styles = StyleSheet.create({
   container: {
-    width: 61,
-    height: 90,
-    paddingLeft: 3,
-    paddingRight: 3,
+    width: 59,
+    height: 85,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     borderWidth: 1,
     borderColor: '#EBEBEB',
+    marginBottom: -15,
   },
   day: {
     color: '#727272',

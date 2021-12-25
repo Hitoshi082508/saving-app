@@ -1,13 +1,14 @@
+import { StackNavigationProp } from '@react-navigation/stack/lib/typescript/src/types';
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
 // type
 import { CalendarDateType } from 'src/types/index';
+import { RootStackParamList } from 'src/types/navigation';
 import { CalendarChild } from '../atoms/Calendar';
 type Props = {
-  className?: string;
+  navigation: StackNavigationProp<RootStackParamList, 'Detail'>;
 };
-export const CalendarContainer: React.FC<Props> = ({ className }) => {
+export const CalendarContainer: React.FC<Props> = ({ navigation }) => {
   const currentDate = new Date();
 
   const year = currentDate.getFullYear();
@@ -24,7 +25,14 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
       monthFormat={'yyyy年 MM月'}
       enableSwipeMonths={true}
       dayComponent={({ date }: { date: CalendarDateType }) => {
-        return <CalendarChild dateData={date} limitMoney={3000} spendMoney={2000} />;
+        return (
+          <CalendarChild
+            dateData={date}
+            limitMoney={3000}
+            spendMoney={2000}
+            navigation={navigation}
+          />
+        );
       }}
     />
   );
