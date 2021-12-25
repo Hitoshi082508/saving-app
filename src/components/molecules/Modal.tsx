@@ -28,20 +28,20 @@ export const Modal: React.FC = () => {
   const openModal = () => {
     setTimeout(changeModalState, 310);
     height.value = withTiming(300, { duration: 1000 });
-    opacity.value = withTiming(1, { duration: 700 });
+    opacity.value = withTiming(1, { duration: 1000 });
   };
 
   const closeModal = async () => {
     height.value = withTiming(0, { duration: 1000 });
     opacity.value = withTiming(0, { duration: 500 });
-    setTimeout(changeModalState, 1000);
+    setTimeout(changeModalState, 700);
   };
 
   return (
     <>
       {modalVisible === false ? (
         <TouchableOpacity onPress={openModal}>
-          <Ionicons name="add-circle" size={60} color="#4594D7" style={styles.icon} />
+          <Ionicons name="add-circle" size={55} color="#4594D7" style={styles.icon} />
         </TouchableOpacity>
       ) : (
         <Animated.View style={[styles.modalContainer, style]}>
