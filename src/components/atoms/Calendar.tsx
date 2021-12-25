@@ -22,7 +22,7 @@ export const CalendarChild: React.FC<Props> = ({ dateData, spendMoney, limitMone
 };
 const styles = StyleSheet.create({
   container: {
-    width: 60,
+    width: 65,
     height: 90,
     paddingLeft: 3,
     paddingRight: 3,
