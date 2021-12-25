@@ -23,29 +23,12 @@ export const CalendarContainer: React.FC<Props> = ({ className }) => {
     <Calendar
       monthFormat={'yyyy年 MM月'}
       enableSwipeMonths={true}
-      style={styles.calendarContainer}
       dayComponent={({ date }: { date: CalendarDateType }) => {
         return <CalendarChild dateData={date} limitMoney={3000} spendMoney={2000} />;
       }}
     />
   );
 };
-
-const styles = StyleSheet.create({
-  calendarContainer: {
-    marginTop: 0,
-  },
-  container: {
-    height: 35,
-  },
-  day: {
-    textAlign: 'center',
-  },
-  money: {
-    fontSize: 11,
-    marginTop: 4,
-  },
-});
 
 LocaleConfig.locales.jp = {
   monthNames: [
