@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
 import { Item } from 'src/components/atoms/Item';
 type Props = {
   item: string;
@@ -18,6 +17,3 @@ export const ItemList: React.FC<Props> = ({ item, money }) => {
     </>
   );
 };
-const styles = StyleSheet.create({
-  container: {},
-});

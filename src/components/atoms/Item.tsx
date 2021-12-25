@@ -16,8 +16,6 @@ const styles = StyleSheet.create({
   container: {
     width: '90%',
     height: 50,
-    marginRight: '5%',
-    marginLeft: '5%',
     paddingRight: '5%',
     paddingLeft: '5%',
     borderBottomColor: '#E5E5E5',
