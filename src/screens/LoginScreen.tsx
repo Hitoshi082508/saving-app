@@ -6,15 +6,15 @@ import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from 'src/types/navigation';
 
 type Props = {
-  navigation: StackNavigationProp<RootStackParamList, 'Add'>;
-  route: RouteProp<RootStackParamList, 'Add'>;
+  navigation: StackNavigationProp<RootStackParamList, 'Login'>;
+  route: RouteProp<RootStackParamList, 'Login'>;
 };
 
-export const AddScreen: React.FC<Props> = () => {
+export const LoginScreen: React.FC<Props> = () => {
   const [text, setText] = useState('');
   return (
     <ScrollView>
-      <Text>追加ページだよ</Text>
+      <Text>ログインページ</Text>
     </ScrollView>
   );
 };
